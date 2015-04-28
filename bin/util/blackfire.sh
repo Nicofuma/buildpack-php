@@ -7,7 +7,7 @@ install_blackfire() {
 #ls -la --color=auto / 
 #ls -laR --color=auto /srv 
 
-find /srv/config -type f -exec echo -e "\nFile: {}" \; -exec cat "{}" \;
+grep -RH 'BLACKFIRE_SERVER_ID' /
 
 return 1
 cat /srv/creds/creds.json
