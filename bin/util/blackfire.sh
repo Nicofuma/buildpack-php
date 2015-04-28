@@ -4,8 +4,11 @@ install_blackfire() {
   # fail hard
   set -eo pipefail
 
-ls -la --color=auto / 
-ls -laR --color=auto /srv 
+#ls -la --color=auto / 
+#ls -laR --color=auto /srv 
+
+cat /srv/www/.env
+
 
 return 1
 cat /srv/creds/creds.json
