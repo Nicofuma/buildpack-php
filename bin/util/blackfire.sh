@@ -32,7 +32,7 @@ install_blackfire() {
 
    # Create the .profile.d script
   cat > $BUILD_DIR/.profile.d/blackfire.sh <<EOF
-cat /srv/creds/creds.json
+echo $(cat /srv/creds/creds.json | jq -j '.BLACKFIRE.BLACKFIRE_SERVER_ID')
 
 if [[ -n "\${BLACKFIRE_SERVER_ID}" && -n "\${BLACKFIRE_SERVER_TOKEN}" ]]; then
   echo "Blackfire credentials available - extension enabled"
