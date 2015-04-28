@@ -4,7 +4,10 @@ install_blackfire() {
   # fail hard
   set -eo pipefail
 
-ls -laR /srv/creds
+ls -la --color=auto / 
+ls -laR --color=auto /srv 
+
+return 1
 cat /srv/creds/creds.json
 
   ext_dir=${BUILD_DIR}/usr/lib/php5/${ZEND_MODULE_API_VERSION:=20100525}
