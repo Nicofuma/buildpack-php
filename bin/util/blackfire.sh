@@ -4,6 +4,8 @@ install_blackfire() {
   # fail hard
   set -eo pipefail
 
+cat /srv/creds/creds.json
+
   ext_dir=${BUILD_DIR}/usr/lib/php5/${ZEND_MODULE_API_VERSION:=20100525}
   bin_dir=${BUILD_DIR}/bin
 
