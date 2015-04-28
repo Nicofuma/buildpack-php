@@ -4,14 +4,6 @@ install_blackfire() {
   # fail hard
   set -eo pipefail
 
-#ls -la --color=auto / 
-#ls -laR --color=auto /srv 
-
-grep -RH 'BLACKFIRE_SERVER_ID' /
-
-return 1
-cat /srv/creds/creds.json
-
   ext_dir=${BUILD_DIR}/usr/lib/php5/${ZEND_MODULE_API_VERSION:=20100525}
   bin_dir=${BUILD_DIR}/bin
 
@@ -40,6 +32,8 @@ cat /srv/creds/creds.json
 
    # Create the .profile.d script
   cat > $BUILD_DIR/.profile.d/blackfire.sh <<EOF
+cat /srv/creds/creds.json
+
 if [[ -n "\${BLACKFIRE_SERVER_ID}" && -n "\${BLACKFIRE_SERVER_TOKEN}" ]]; then
   echo "Blackfire credentials available - extension enabled"
 
